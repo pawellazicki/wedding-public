@@ -1,0 +1,117 @@
+<app-image-background 
+imageUrl="../../../assets/images/hearts2.jpeg"
+(isLoaded)="setLoader($event)">
+
+  <ng-container *ngIf="!isLoading">
+
+    <!-- TITLE -->
+    <div class="row">
+      <div class="d-flex flex-column">
+        <span [@title]="isLoading ? undefined: 'show'"
+        class="h1 text-center title">
+          Loveline
+        </span>
+        <div class="birds-container mx-auto">
+          <img [@birds]="isLoading ? undefined: 'show'" class="birds mx-auto" src="../../../assets/images/birds.png">
+          <i [@birds-heart]="isLoading ? undefined: 'show'" class="bi bi-heart-fill birds-heart"></i>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONTENT --> 
+    <div class="content-container m4 pb-5">
+
+      <!-- 1 -->
+      <div [@appear]="isLoading ? undefined: {value: 'show', params: {time: '2.7'}}">
+        <app-loveline-row
+        [isRight]="false" [isFirst]="true">
+          <mat-card-header class="h1">Jak się Poznaliśmy?</mat-card-header>
+          <mat-card-subtitle class="d-flex" >
+            <p class="h6 mb-0 rounded">22.12.2015</p>
+          </mat-card-subtitle>
+          <mat-card-content>
+            <div class="d-flex flex-column">
+              <p class="fs-6">
+                Brak osoby towarzyszącej na dwa tygodnie przed studniówką to spory problem. Jednak szybka analiza sytuacji i intuicja sprawiły, że nasze drogi się spotkały. To miała być zwykła koleżeńska przysługa...
+              </p>
+            </div>
+          </mat-card-content>
+        </app-loveline-row>
+      </div>
+
+      <!-- 2 -->
+      <div [@appear]="isLoading ? undefined: {value: 'show', params: {time: '3.1'}}">
+        <app-loveline-row [isRight]="true">
+          <mat-card-header class="h1">Pierwsza randka</mat-card-header>
+          <mat-card-subtitle class="d-flex" >
+            <p class="h6 mb-0 rounded">26.01.2016</p>
+          </mat-card-subtitle>
+          <mat-card-content>
+            <div class="d-flex flex-column">
+              <p class="fs-6">
+                Scena jak z filmu, biała zima, łyżwy w parku, a na koniec gorąca czekolada w "Czerwonym rowerze". Pierwsze nieśmiałe gesty. Kolejne spotkanie było już tylko kwestią czasu.
+              </p>
+              <img class="card-image" src="../../../assets/images/skites.webp">
+            </div>
+          </mat-card-content>
+        </app-loveline-row>
+      </div>
+
+      <!-- 3 -->
+      <div [@appear]="isLoading ? undefined: {value: 'show', params: {time: '3.7'}}">
+        <app-loveline-row [isRight]="false">
+          <mat-card-header class="h1">Zostaliśmy parą</mat-card-header>
+          <mat-card-subtitle class="d-flex" >
+            <p class="h6 mb-0 rounded">14.02.2016</p>
+          </mat-card-subtitle>
+          <mat-card-content>
+            <div class="d-flex flex-column">
+              <p class="fs-6">
+                "Deadpool" to może nie najlepszy wybór na walentynkowy seans ale bawiliśmy się świetnie. Powrotny zimowy spacer utwierdził nas w przekonaniu, że jesteśmy sobie przeznaczeni.
+              </p>
+              <img class="card-image" src="../../../assets/images/deadpool.jpg">
+            </div>
+          </mat-card-content>
+        </app-loveline-row>
+      </div>
+
+      <!-- 4 -->
+      <div [@appear]="isLoading ? undefined: {value: 'show', params: {time: '4.3'}}">
+        <app-loveline-row [isRight]="true">
+          <mat-card-header class="h1">Zaręczyny</mat-card-header>
+          <mat-card-subtitle class="d-flex" >
+            <p class="h6 mb-0 rounded">21.08.2020</p>
+          </mat-card-subtitle>
+          <mat-card-content>
+            <div class="d-flex flex-column">
+              <p class="fs-6">
+                Był to jeden z ważniejszych dni w naszym związku. Z pozoru zwyczajny spacer na przepiękny Cypel Rewski zakończył się oświadczynami. Aga zupełnie się nie spodziewała. Zaskoczenie i łzy wzruszenia. Ze spaceru wróciliśmy jako narzeczeństwo.
+              </p>
+              <img class="card-image" src="../../../assets/images/engagement.jpg">
+            </div>
+          </mat-card-content>
+        </app-loveline-row>
+      </div>
+
+      <!-- 5 -->
+      <div [@appear]="isLoading ? undefined: {value: 'show', params: {time: '4.6'}}">
+        <app-loveline-row [isRight]="false">
+          <mat-card-header class="h1">Ślub</mat-card-header>
+          <mat-card-subtitle class="d-flex" >
+            <p class="h6 mb-0 rounded">20.08.2022</p>
+          </mat-card-subtitle>
+          <mat-card-content>
+            <div class="d-flex flex-column">
+              <p class="fs-6">
+                Tu zaczyna się kolejny rozdział naszej wspólnej przygody...
+              </p>
+            </div>
+          </mat-card-content>
+        </app-loveline-row>
+      </div>
+
+    </div>
+    
+  </ng-container>
+
+</app-image-background>

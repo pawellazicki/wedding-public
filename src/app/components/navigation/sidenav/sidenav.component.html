@@ -1,0 +1,22 @@
+<mat-nav-list>
+  <div *ngFor='let route of routeList'>
+    <ng-container *ngIf="route.visible">
+      <mat-list-item 
+      (click)="routeClick.emit()"
+      [routerLink]="route.url">
+        <div class="action my-auto" 
+          [@heightUp]="route.hover || route.selected ? 'up' : 'down'">
+        </div>
+        <div class="select d-flex flex-column h-100"
+        [@scale]="route.hover || route.selected ? 'up' : 'down'"
+        (mouseover)="route.hover = true" (mouseout)="route.hover = false"
+        [hidden]="!route.visible" 
+        (click)="navigate(route)">
+          <i [className]="'m-auto bi ' + route.icon"></i>
+          <span *ngIf="route.text">{{route.text}}</span>
+      </div>
+      </mat-list-item>
+      <mat-divider></mat-divider>
+    </ng-container>
+  </div>
+</mat-nav-list>

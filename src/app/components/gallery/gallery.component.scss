@@ -1,0 +1,21 @@
+.title {
+  font-size: calc(2.2rem + 3vw);
+  color: #fff;
+  font-family: 'Great Vibes', cursive;
+}
+
+@media (max-width: 992px) {
+  .col-3-grid {
+    display: none;
+  }
+}
+
+@media (min-width: 992px) {
+  .col-2-grid {
+    display: none;
+  }
+}
+
+img {
+  cursor: pointer;
+}

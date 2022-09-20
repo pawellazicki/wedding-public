@@ -1,0 +1,101 @@
+<app-image-background 
+imageUrl="../../../assets/images/wall.jpeg"
+(isLoaded)="setLoader($event)">
+
+  <ng-container *ngIf="!isLoading">
+    <div *ngIf="!isLoadingData else loading">
+
+      <!-- TITLE -->
+      <div class="row">
+        <span [@title]="isLoading ? undefined: 'show'"
+        class="h1 text-center title">
+          Księga gości
+        </span>
+      </div>
+
+      <!-- Messages -->
+      <div class="d-flex flex-wrap justify-content-center">
+        <div class="card-container" *ngFor="let message of messages; let i = index"
+        [@appear2]="{value: 'show', params: {time: 1.5+(i/5)}}">
+          <img class="image-card" [src]="message.styleSrc">
+          <div class="card-content">
+            <div class="d-flex flex-column h-100 justify-content-between">
+              <p class="message-text">{{message.text}}</p>  
+              <p>{{message.sender}}</p>  
+            </div>
+          </div>
+        </div>
+
+        <!-- Add button -->
+        <div [class.d-none]="isNewMessageOpen"
+        [@appear2]="{value: 'show', params: {time: 1.5+(messages.length/5)}}"
+        class="add-form">
+          <button mat-fab class="add-button" color="primary"
+          (click)="switchNewMessageForm(true)">
+            <mat-icon>add</mat-icon>
+          </button>
+        </div>
+
+        <!-- Add form -->
+        <div *ngIf="isNewMessageOpen"
+        [@appear]="'show'"
+        class="card-container">
+          <!-- img -->
+          <img class="image-card" [src]="selectedStyle" *ngIf="!isAddLoading else loading">
+          <!-- FORM -->
+          <form [formGroup]="form" (submit)="addMessage()" *ngIf="!isAddLoading">
+
+            <!-- SUBMIT BUTTON -->
+            <button mat-raised-button 
+            class="confirm-button" color="primary" type="submit">
+              Dodaj
+            </button>
+            
+            <!-- STYLE TOGGLE -->
+            <mat-button-toggle-group class="button-toggle" formControlName="style">
+              <mat-button-toggle value="../../../assets/images/sheet0.png">Styl 1</mat-button-toggle>
+              <mat-button-toggle value="../../../assets/images/sheet1.png">Styl 2</mat-button-toggle>
+              <mat-button-toggle value="../../../assets/images/sheet2.png">Styl 3</mat-button-toggle>
+            </mat-button-toggle-group>
+          
+            <!-- CARD CONTENT -->
+            <div class="card-content">
+              <!-- MESSAGE -->
+              <mat-form-field appearance="outline" class="w-100 no-padding-form text-form">
+                <mat-label>Twój wpis</mat-label>
+                <textarea matInput [rows]="4" placeholder="..."
+                formControlName="text"></textarea>
+              </mat-form-field>
+
+              <!-- WHO IS WRITING -->
+              <mat-form-field appearance="outline" class="w-100">
+                <mat-label>Podpis</mat-label>
+                <input matInput placeholder="Podpis" formControlName="sender">
+              </mat-form-field>
+
+            </div>
+          </form>
+
+          <!-- CANCEL BUTTON -->
+          <button mat-mini-fab class="cancel" color="warn"
+          *ngIf="!isAddLoading"
+          (click)="switchNewMessageForm(false)">
+            <mat-icon>close</mat-icon>
+          </button>
+          
+        </div>
+      </div>
+    </div>
+  </ng-container>
+
+</app-image-background>
+
+
+<ng-template #loading>
+  <div class="container-fluid">
+    <mat-spinner 
+      class="mx-auto mt-5"
+      diameter="50">
+    </mat-spinner>
+  </div>
+</ng-template>

@@ -1,0 +1,143 @@
+
+.bi {
+  color: #f0394d;
+  font-size: calc(1rem + 1.5vw) !important;
+}
+
+
+.card-container {
+  display: flex;
+  
+  .card-wrapper {
+    display: flex;
+
+    .arrow {
+      margin-top: 10px;
+      width: 0px;
+      height: 0px;
+      border-bottom: 15px solid transparent;
+      border-top: 15px solid transparent;
+    }
+
+    .arrow-right {
+      margin-right: 20px;
+      border-left: 15px solid white;
+    }
+    .arrow-left {
+      margin-left: 20px;
+      border-right: 15px solid white;
+    }
+
+    .heart-container {
+      background-color: white;
+      border-radius: 50%;
+      padding: 7px 6px 2px 7px;
+
+      .bi-heart-fill {
+        font-size: 17px !important;
+      }
+
+      .bi-heart-fill::before {
+        font-size: 17px;
+      }
+
+    }
+
+    .heart-left {
+      margin-left: -12px;
+    }
+    .heart-right {
+      margin-right: -12px;
+      z-index: 0;
+    }
+  }
+
+}
+
+.mat-card:not([class*=mat-elevation-z]) {
+  box-shadow: none !important;
+}
+
+.circle {
+  display: flex;
+  border-radius: 50%;
+  background-color: white;
+}
+
+@media (max-width: 768px) {
+  .container-left {
+    justify-content: start;
+
+    .card-wrapper {
+      border-left: 4px solid #f0394d;
+      justify-content: start;
+
+      .arrow-right {
+        display: none;
+      }
+      .heart-right {
+        display: none;
+      }
+    }
+  }
+
+  .container-right {
+    justify-content: start;
+
+    .card-wrapper {
+      border-left: 4x solid #f0394d;
+      justify-content: start;
+
+      .arrow-right {
+        display: none;
+      }
+      .heart-right {
+        display: none;
+      }
+    }
+    .blank {
+      border-right: 4px solid #f0394d;
+    }
+  }
+ }
+
+@media (min-width: 768px) {
+  .container-left {
+    justify-content: start;
+
+    .card-wrapper {
+      border-right: 2px solid #f0394d;
+      justify-content: end;
+
+      .arrow-left {
+        display: none;
+      }
+      .heart-left {
+        display: none;
+      }
+    }
+
+    .blank {
+      border-left: 2px solid #f0394d;
+    }
+  }
+
+  .container-right {
+    justify-content: end;
+
+    .card-wrapper {
+      border-left: 2px solid #f0394d;
+      justify-content: start;
+
+      .arrow-right {
+        display: none;
+      }
+      .heart-right {
+        display: none;
+      }
+    }
+    .blank {
+      border-right: 2px solid #f0394d;
+    }
+  }
+ }

@@ -1,0 +1,44 @@
+<app-image-background 
+imageUrl="../../../assets/images/rings_silver.jpeg"
+(isLoaded)="setLoader($event)">
+  <ng-container *ngIf="!isLoading">
+    <div class="row">
+      <p [@wedding]="isLoading ? undefined: 'up'"
+      class="text-center wedding-label">
+        Ślub
+      </p>
+      <div class="col-6 col-sm-5 col-md-4 col-lg-3 mx-auto mt-3">
+        <mat-divider [@scaleUp1]="isLoading ? undefined: 'up'"
+        class="wedding-divider"></mat-divider>
+      </div>
+    </div>
+    <div class="we-label d-flex flex-nowrap mt-5">
+      <span [@toLeft]="isLoading ? undefined: 'left'"
+      class="ms-auto">
+        Agnieszka&nbsp;
+      </span>
+      <i [@scaleUp2]="isLoading ? undefined: 'up'" class="bi bi-heart-fill"></i>
+      <span [@toRight]="isLoading ? undefined: 'right'"
+      class="me-auto">
+        &nbsp;Paweł
+      </span>
+    </div>
+    <div class="row mt-5">
+      <span [@opacity1]="isLoading ? undefined: 'up'"
+      class="text-center description fs-6 shadow-text mt-2">
+        Serdecznie zapraszamy na naszą uroczystość.<br>Wasza obecność przyniesie nam wiele radości!
+      </span>
+    </div>
+    <div class="col-11 col-md-9 col-lg-7 col-xl-5 mx-auto mt-3 pb-4">
+      <mat-card [@scaleUp3]="isLoading ? undefined: 'up'">
+        <mat-card-content>
+          <div class="d-flex flex-column">
+            <app-icon class="mx-auto" [icon]="0"></app-icon>
+            <p class="mt-3 text-center" style="font-weight: 450;">Uroczystość zawarcia związku małżeńskiego odbędzie się w parafii pw. Niepokalanego Serca Najświętszej Maryi Panny w Grudziądzu</p>
+            <p class="h1 red-label text-center">20 sierpnia 2022 r. o godz. 16:00</p>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </ng-container>
+</app-image-background>

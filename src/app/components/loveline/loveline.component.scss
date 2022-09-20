@@ -1,0 +1,58 @@
+.line {
+  height: 100%;
+  width: 3px;
+  background-color: #f0394d;
+}
+
+
+.birds-container {
+  position: relative;
+
+  .birds {
+    height: auto;
+    width: 96px !important;
+  }
+  
+  .birds-heart {
+    position: absolute;
+    top: 10px;
+    left: 30px;
+  }
+}
+
+.max-height {
+  height: 100%;
+}
+
+.title {
+  font-size: calc(2.2rem + 3vw);
+  color: #fff;
+  font-family: 'Great Vibes', cursive;
+  // margin-top: calc(2rem + 2vh) !important;
+}
+
+.bi {
+  color: #f0394d;
+  font-size: calc(1rem + 1.5vw) !important;
+}
+
+.content-container {
+  
+  mat-card-header {
+    color: #f0394d;
+    font-family: 'Great Vibes', cursive;
+  }
+
+  mat-card-subtitle {
+    color: white;
+    
+    p {
+      background-color: rgb(67, 108, 255);
+      padding: 5px;
+    }
+  }
+
+  .card-image {
+    width: 100%;
+  }
+}

@@ -1,0 +1,67 @@
+.background {
+  height: 100%;
+  width: 100%;
+  background-color: #000;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center; 
+  position: absolute;
+}
+
+.image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: 50% 70%;
+  opacity: 0;
+}
+
+.content {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+.holder{
+    width: 100px;
+    height: 30px;
+    margin: 240px auto 0px auto;
+}
+
+.ball{
+    display: inline-block;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    margin-right: 10px;
+    background-color: blue;
+}
+
+.b1{
+    animation: jump 1s forwards infinite;
+}
+
+.b2{
+    animation: jump 1s 0.1s forwards infinite;
+}
+
+.b3{
+    animation: jump 1s 0.2s forwards infinite;
+}
+
+.b4{
+    animation: jump 1s 0.3s forwards infinite;
+}
+@keyframes jump {
+    0% {transform: translate(0px,0px);}
+    40% {transform: translate(0px,0px);}
+    50% {background-color: cyan;}
+    70% {transform: translate(0px, -120px); background-color: palevioletred;}
+    100% {background-color: blue;}
+}

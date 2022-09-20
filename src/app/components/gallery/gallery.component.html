@@ -1,0 +1,60 @@
+<app-image-background 
+imageUrl="../../../assets/images/hearts.jpeg"
+(isLoaded)="setLoader($event)">
+
+  <ng-container *ngIf="!isLoading">
+    <!-- TITLE -->
+    <div class="row">
+      <div class="d-flex flex-column">
+        <span [@title]="isLoading ? undefined: 'show'"
+        class="h1 text-center title">
+          Galeria zdjęć
+        </span>
+      </div>
+    </div>
+
+    <!-- Gallery -->
+    <div class="content mt-4">
+      <div class="container-fluid" *ngIf="!photosLoaded">
+        <mat-spinner 
+          class="mx-auto mt-5"
+          diameter="50">
+        </mat-spinner>
+      </div>
+
+
+      <!-- 2 COLUMNS -->
+      <div [hidden]="!photosLoaded"
+      class="col-2-grid row">
+        <div *ngFor="let i of [0,1]"
+        class="col-6 col-md-6 col-lg-4 mb-4 mb-lg-0" >
+          <img *ngFor="let j of [0,1,2]"
+          [class.d-none]="!photos[i+(j*2)].isLoaded"
+          [@appear]="photos[i+(j*2)].isLoaded && isLoading && photosLoaded ? undefined: {value: 'show', params: {time: 1+(i+(j*2))/2.5}}"
+            [src]="photos[i+(j*2)].src"
+            (load)="photos[i+(j*2)].isLoaded = true"
+            class="w-100 shadow-1-strong rounded mb-4"
+            (click)="openPhoto(photos[i+(j*2)])"
+          />
+        </div>  
+      </div>
+
+      <!-- 3 COLUMNS -->
+      <div [hidden]="!photosLoaded"
+      class="col-3-grid row">
+        <div *ngFor="let i of [0,1,2]"
+        class="col-6 col-md-6 col-lg-4 mb-4 mb-lg-0" >
+          <img *ngFor="let j of [0,1]"
+          [@appear]="photos[i+(j*3)].isLoaded && isLoading && photosLoaded ? undefined: {value: 'show', params: {time: 1+(i+(j*3))/3}}"
+            [src]="photos[i+(j*3)].src"
+            (load)="photos[i+(j*3)].isLoaded = true"
+            class="w-100 shadow-1-strong rounded mb-4"
+            (click)="openPhoto(photos[i+(j*3)])"
+          />
+        </div>        
+      </div>
+
+    </div>
+  </ng-container>
+
+</app-image-background>

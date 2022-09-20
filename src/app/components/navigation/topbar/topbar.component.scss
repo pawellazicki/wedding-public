@@ -1,0 +1,18 @@
+.select {
+  cursor: pointer;
+  min-width: 50px !important;
+}
+
+.action {
+  background-color: #436cff;
+  height: 5px;
+}
+
+mat-toolbar {
+  background-color: #f2f2e2;
+
+  .bi {
+    margin: auto !important;
+    font-size: calc(1.2rem + 0.5vw) !important;
+  }
+}

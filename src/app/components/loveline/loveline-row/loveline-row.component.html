@@ -1,0 +1,22 @@
+<div class="col-11 col-md-12 col-lg-11 col-xl-10 col-xxl-8 card-container mx-auto"
+[class]="isRight ? 'container-right' : 'container-left'">
+  <div *ngIf="isRight" class="col-0 col-md-6 blank"></div>
+  <div class="col-12 col-md-6 card-wrapper" [class]="isFirst ? 'pt-4' : 'pt-4 pt-md-2'">
+    <div class="d-flex">
+      <div class="heart-container heart-left mt-2 mb-auto">
+        <i class="bi bi-heart-fill"></i>
+      </div>
+      <div class="arrow arrow-left"></div>
+    </div>
+    <mat-card>
+      <ng-content></ng-content>
+    </mat-card>
+    <div class="d-flex">
+      <div class="arrow arrow-right"></div>
+      <div class="heart-container heart-right mt-2 mb-auto">
+        <i class="bi bi-heart-fill"></i>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="!isRight" class="col-0 col-md-6 blank"></div>
+</div>

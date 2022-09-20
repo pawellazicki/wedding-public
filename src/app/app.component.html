@@ -1,0 +1,13 @@
+<div class="h-100 d-flex flex-column">
+  <app-topbar #topbar
+    (buttonMenuClick)="isSideNav = !isSideNav">
+  </app-topbar>
+  <mat-sidenav-container class="h-100">
+    <mat-sidenav [autoFocus]="false" mode="over" [(opened)]="isSideNav">
+      <app-sidenav (routeClick)="isSideNav = false"></app-sidenav>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

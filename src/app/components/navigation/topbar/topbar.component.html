@@ -1,0 +1,31 @@
+<mat-toolbar *ngIf="!isLoading"
+color="white"
+(window:resize)="setTopbar()">
+  <mat-toolbar-row>
+    <button *ngIf="isDrawer"
+    mat-icon-button
+    (click)="onButtonMenuClick()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <div #space1 class="w-100 h-100"></div>
+    <div #buttons
+    class="d-flex h-100 ms-2">
+      <div matRipple 
+      [matRippleColor]="'rgba(0,100,250,0.1)'" 
+      class="me-2" 
+      [hidden]="isDrawer" 
+      *ngFor='let route of routeList'>
+        <div class="action mx-auto" [@widthUp]="route.hover || route.selected ? 'up' : 'down'"></div>
+        <div class="select d-flex flex-column h-100"
+        [@scale]="route.hover || route.selected ? 'up' : 'down'"
+        (mouseover)="route.hover = true" (mouseout)="route.hover = false"
+        [hidden]="!route.visible" 
+        (click)="navigate(route)">
+          <i [className]="'m-auto bi ' + route.icon"></i>
+          <span *ngIf="route.text">{{route.text}}</span>
+      </div>
+      </div>
+    </div>
+    <div #space2 class="w-100"></div>
+  </mat-toolbar-row>
+</mat-toolbar>

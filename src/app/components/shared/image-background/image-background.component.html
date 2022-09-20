@@ -1,0 +1,26 @@
+<div class="background">
+  <img class="image"
+  [src]="imageUrl" 
+  [@appear]="isLoading ? undefined : 'visible'"
+  (load)="isImageLoaded()">
+  <div class="content">
+    <div class="container-fluid h-100">
+      <div *ngIf="isLoading" class="holder">
+        <div class="b1 ball"></div>
+        <div class="b2 ball"></div>
+        <div class="b3 ball"></div>
+        <div class="b4 ball"></div>
+      </div>
+      <ng-content></ng-content>
+    </div>
+  </div>
+</div>
+
+<ng-template #loading>
+  <div class="holder">
+    <div class="b1 ball"></div>
+    <div class="b2 ball"></div>
+    <div class="b3 ball"></div>
+    <div class="b4 ball"></div>
+</div>
+</ng-template>

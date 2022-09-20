@@ -1,0 +1,54 @@
+<app-image-background 
+imageUrl="../../../assets/images/pomost_scaled.jpg"
+(isLoaded)="setLoader($event)">
+  <div class="d-flex flex-column h-100">
+    <div [@goUp1]="isLoading ? undefined: 'up'"
+    class="getting-maried-container mx-auto mt-auto">
+    <span class="h1 getting-maried">
+        Pobieramy się!
+      </span>
+    </div>
+    <span [@appear1]="isLoading ? undefined: 'visible'" class="we-label d-flex flex-nowrap mx-auto">
+      <span [@toRight]="isLoading ? undefined: 'right'">Agnieszka&nbsp;</span>
+      <i [@scaleUp1]="isLoading ? undefined: 'up'" class="bi bi-heart-fill"></i>
+      <span [@toLeft]="isLoading ? undefined: 'left'">&nbsp;Paweł</span>
+    </span>
+    <!-- CIRCLES -->
+    <div class="mx-auto d-flex justify-content-center col-12 col-sm-10 col-md-7 col-lg-6 col-xl-5 col-xxl-4 mb-5 mb-md-3">
+      <div class="circles d-flex justify-content-center w-100">
+        <div [@circle1]="isLoading ? undefined: 'visible'"
+        class="circle d-flex justify-content-center me-2"
+        #square (window:resize)="0" [style.height.px]="square.offsetWidth">
+          <div class="circle-text">
+            <p class="fs-1 mb-0 mb-sm-3">{{days}}</p>
+            <p class="fs-5">dni</p>
+          </div>
+        </div>
+        <div [@circle2]="isLoading ? undefined: 'visible'"
+        class="circle d-flex justify-content-center me-2"
+        #square (window:resize)="0" [style.height.px]="square.offsetWidth">
+          <div class="circle-text">
+            <p class="fs-1 mb-1 mb-sm-3">{{hours}}</p>
+            <p class="fs-5">godzin</p>
+          </div>
+        </div>
+        <div [@circle3]="isLoading ? undefined: 'visible'"
+        class="circle d-flex justify-content-center me-2"
+        #square (window:resize)="0" [style.height.px]="square.offsetWidth">
+          <div class="circle-text">
+            <p class="fs-1 mb-1 mb-sm-3">{{minutes}}</p>
+            <p class="fs-5">minut</p>
+          </div>
+        </div>
+        <div [@circle4]="isLoading ? undefined: 'visible'"
+        class="circle d-flex justify-content-center"
+        #square (window:resize)="0" [style.height.px]="square.offsetWidth">
+          <div class="circle-text">
+            <p class="fs-1 mb-1 mb-sm-3">{{seconds}}</p>
+            <p class="fs-5">sekund</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</app-image-background>

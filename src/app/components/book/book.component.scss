@@ -1,0 +1,52 @@
+.title {
+  font-size: calc(2.2rem + 3vw);
+  color: #fff;
+  font-family: 'Great Vibes', cursive;
+}
+
+.card-container {
+  position: relative;
+
+  .message-text {
+    max-height: 130px !important;
+    overflow: auto;
+  }
+}
+
+.card-content {
+  position: absolute;
+  top: 120px;
+  left: 90px;
+  right: 80px;
+  bottom: 70px;
+  overflow: hidden;
+}
+
+.add-form {
+  width: 360px;
+  height: 360px;
+
+  .add-button {
+    margin-top: 80px;
+    margin-left: 20px;
+  }
+}
+
+.button-toggle {
+  position: absolute;
+  top: 0;
+  left: 50px;
+}
+
+.cancel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+}
+
+.confirm-button {
+  position: absolute;
+  bottom: 20px;
+  left: 50px;
+}
